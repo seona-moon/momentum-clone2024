@@ -1,22 +1,28 @@
-const h1 = document.querySelector(".hello h1");
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
 
-function handleMouseEnter() {
-  h1.innerText = "Mouse is here!";
-}
-function handleMouseLeave() {
-  h1.innerText = "Mouse is gone!";
-}
-
-function handleWindowResize() {
-  document.body.style.backgroundColor = "tomato";
-}
-
-function handleWindowCopy() {
-  alert("copy!");
+function onLoginSubmit(event) {
+  event.preventDefault();
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+  localStorage.setItem(USERNAME_KEY, loginInput.value);
+  paintGreeting();
 }
 
-h1.addEventListener("mouseenter", handleMouseEnter);
-h1.addEventListener("mouseleave", handleMouseLeave);
+function paintGreeting() {
+  const username = localStorage.getItem(USERNAME_KEY);
+  greeting.classList.remove(HIDDEN_CLASSNAME);
+  greeting.innerText = `Hello, ${username}! Keep Going!!`;
+}
 
-window.addEventListener("resize", handleWindowResize);
-window.addEventListener("copy", handleWindowCopy);
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+if (savedUsername === null) {
+  //이름이 저장 안되어있다면?
+  loginForm.classList.remove(HIDDEN_CLASSNAME);
+  loginForm.addEventListener("submit", onLoginSubmit);
+} else {
+  paintGreeting();
+}

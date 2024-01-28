@@ -3,11 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Momentum</title>
     <link rel="stylesheet" href="style.css" />
+    <title>Momentum App</title>
   </head>
   <body>
-    <div class="hello"><h1>Grap ME</h1></div>
+    <form id="login-form" class="hidden">
+      <input
+        type="text"
+        placeholder="What is your name?"
+        required
+        maxlength="15"
+      />
+      <button>Log In</button>
+    </form>
+    <h1 id="greeting" class="hidden"></h1>
     <script src="app.js"></script>
   </body>
 </html>
