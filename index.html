@@ -7,32 +7,28 @@
     <title>Momentum App</title>
   </head>
   <body>
-    <form id="login-form" class="hidden">
-      <input
-        type="text"
-        placeholder="What is your name?"
-        required
-        maxlength="15"
-      />
-      <button>Log In</button>
-    </form>
-    <h2 id="clock">00:00:00</h2>
-    <h1 id="greeting" class="hidden"></h1>
-    <form id="todo-form">
-      <input
-        type="text"
-        placeholder="Write a To Do and Press enter!"
-        required
-      />
-    </form>
-    <ul id="todo-list"></ul>
-    <div id="quote">
-      <span></span>
-      <span></span>
-    </div>
-    <div id="weather">
-      <span></span>
-      <span></span>
+    <div id="main">
+      <form id="login-form">
+        <header>Hello, What is your name?</header>
+        <input type="text" required maxlength="15" />
+      </form>
+      <div id="momentum" class="hidden">
+        <h2 id="clock" class="hidden">00:00:00</h2>
+        <h1 id="greeting" class="hidden"></h1>
+        <form id="todo-form" class="hidden">
+          <span>What is your main goal for today?</span>
+          <input type="text" required />
+        </form>
+        <ul id="todo-list" class="hidden"></ul>
+        <div id="quote" class="hidden">
+          <span></span>
+          <span></span>
+        </div>
+        <div id="weather" class="hidden">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </div>
     <script src="js/clock.js"></script>
     <script src="js/background.js"></script>
@@ -40,5 +36,9 @@
     <script src="js/greetings.js"></script>
     <script src="js/weather.js"></script>
     <script src="js/quotes.js"></script>
+    <script
+      src="https://kit.fontawesome.com/5f2aa611c1.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

@@ -57,4 +57,5 @@ function setQuote() {
   author.innerText = todaysQuote.author;
 }
 
-setInterval(setQuote, 10000);
+setQuote();
+setInterval(setQuote, 30000);
